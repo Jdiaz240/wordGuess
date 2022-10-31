@@ -103,7 +103,7 @@ document.addEventListener('keydown', (event) => {
         let letter = event.key;
         //the letter is then passed to the function to check if it in the word
         checkLetters(letter)
-
+        //calls function to check if the word is complete
         checkWin();
     }
 })
