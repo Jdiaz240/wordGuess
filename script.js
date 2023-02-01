@@ -83,7 +83,10 @@ function checkWin() {
     let check = blanks.join('')
     console.log(check)
     if (check === chosenWord) {
+        clearInterval(clock);
+        timer.textContent = '';
         return guess.textContent = 'congrats you win'
+
     }
 }
 
