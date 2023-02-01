@@ -27,6 +27,7 @@ function beginGame() {
             timer.textContent = 'Game Over';
         }
     }, 1000)
+    start.setAttribute('class', 'none');
     getWords();
 }
 
@@ -85,7 +86,9 @@ function checkWin() {
     if (check === chosenWord) {
         clearInterval(clock);
         timer.textContent = '';
-        return guess.textContent = 'congrats you win'
+        start.removeAttribute('class', 'none');
+        start.textContent = 'Play Again?';
+        return guess.textContent = 'Congrats You Win'
 
     }
 }
