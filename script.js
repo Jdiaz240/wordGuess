@@ -15,17 +15,20 @@ let blanks = []
 let wordBank = ['superman', 'spiderman', 'batman']
 let clock;
 
-let time = wordBank.length * 15
+let time = 45
 
 //handles starting the game, starts timer and gets the word to guess
 function beginGame() {
     clock = setInterval(function() {
         time--;
-        timer.textContent = 'Time:' + time;
+        timer.textContent = 'Time: ' + time;
         if (time === 0) {
             clearInterval(clock)
+            start.removeAttribute('class', 'none');
+            start.textContent = 'Play Again?';
             timer.textContent = 'Game Over';
-        }
+            time = 45;
+        } 
     }, 1000)
     start.setAttribute('class', 'none');
     getWords();
